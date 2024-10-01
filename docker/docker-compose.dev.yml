@@ -1,0 +1,29 @@
+networks:
+  app:
+
+services:
+  app:
+    container_name: app
+    build:
+      context: ..
+      dockerfile: ./docker/dev.dockerfile
+    volumes:
+      - ../src:/app/src
+      - ../.env:/app/.env
+      - ../prisma:/app/prisma
+    ports:
+      - 8080:8080
+    networks:
+      - app
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      - POSTGRES_PASSWORD=secret
+    ports:
+      - 5432:5432
+    networks:
+      - app

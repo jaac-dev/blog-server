@@ -1,0 +1,11 @@
+# IDE
+.idea
+.vs
+.vscode
+
+# NodeJS
+node_modules
+dist
+
+# Configuration
+.env
