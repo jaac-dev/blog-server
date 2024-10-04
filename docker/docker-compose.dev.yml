@@ -9,7 +9,7 @@ services:
       dockerfile: ./docker/dev.dockerfile
     volumes:
       - ../src:/app/src
-      - ../.env:/app/.env
+      - ../.env.example:/app/.env.example
       - ../prisma:/app/prisma
     ports:
       - 8080:8080

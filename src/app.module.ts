@@ -9,6 +9,7 @@ import { CommentModule } from "@/comment";
 import { PostModule } from "@/post";
 import { RoleModule } from "@/role";
 import { UserModule } from "@/user";
+import { AuthModule } from "@/auth";
 
 @Module({
   imports: [
@@ -23,6 +24,8 @@ import { UserModule } from "@/user";
     PostModule,
     RoleModule,
     UserModule,
+
+    AuthModule,
   ],
 })
 export class AppModule {}
